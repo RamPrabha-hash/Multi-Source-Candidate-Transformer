@@ -1,0 +1,9 @@
+{
+    "email": ["ats", "resume"],
+    "phone": ["ats", "resume"],
+    "full_name": ["resume", "ats"],
+    "skills": ["resume", "ats"],
+    "education": ["resume"],
+    "experience": ["resume"],
+    "links": ["resume"]
+}

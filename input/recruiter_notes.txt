@@ -1,0 +1,31 @@
+Candidate Interview Notes
+
+Candidate: Ram Prabha M
+
+Communication:
+Good communication skills with clear explanation of technical concepts.
+
+Technical Assessment:
+Strong Python fundamentals.
+Good understanding of Machine Learning and NLP.
+Comfortable with Flask and Streamlit.
+
+Projects Discussed:
+- TrueMark AI Cosmetic Analyzer
+- UCASE AI Constitution Assistant
+- AI Meeting Summarizer
+
+Strengths:
+Quick learner.
+Good problem-solving skills.
+Clean coding practices.
+
+Areas for Improvement:
+Needs more exposure to cloud deployment.
+Should improve system design knowledge.
+
+Recruiter Recommendation:
+Recommended for the next technical interview round.
+
+Overall Rating:
+4.5/5

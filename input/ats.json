@@ -1,0 +1,17 @@
+{
+  "candidate_id": "C001",
+  "name": "RAM PRABHA M",
+  "email": "prabhaidol@gmail.com",
+  "phone": "+91 8838758349",
+  "location": "Coimbatore, Tamil Nadu, India",
+  "title": "AI/ML & Full Stack Developer",
+  "experience": 1,
+  "current_company": "Software Solution",
+  "skills": [
+    "Python",
+    "SQL",
+    "Machine Learning",
+    "Git",
+    "React.js"
+  ]
+}
