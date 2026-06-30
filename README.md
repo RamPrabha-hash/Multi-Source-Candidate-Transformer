@@ -315,7 +315,6 @@ output/final_candidate.json
 
 **Ram Prabha M**
 
-AI/ML & Full Stack Developer
 
 GitHub: https://github.com/RamPrabha-hash
 
