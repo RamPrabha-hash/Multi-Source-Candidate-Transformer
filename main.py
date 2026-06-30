@@ -1,9 +1,3 @@
-"""
-Main Pipeline
-
-Runs the complete Multi-Source Candidate Transformer.
-"""
-
 from parsers.ats_parser import ATSParser
 from parsers.resume_parser import ResumeParser
 from parsers.notes_parser import NotesParser
@@ -25,9 +19,6 @@ def main():
     print(" Multi-Source Candidate Transformer ")
     print("=" * 60)
 
-    # -----------------------------------
-    # Parse Input Sources
-    # -----------------------------------
 
     ats_parser = ATSParser("input/ats.json")
     resume_parser = ResumeParser("input/resume.pdf")
@@ -41,9 +32,6 @@ def main():
     print("✓ Parsed Resume")
     print("✓ Parsed Recruiter Notes")
 
-    # -----------------------------------
-    # Normalize
-    # -----------------------------------
 
     normalizer = Normalizer()
 
@@ -52,10 +40,6 @@ def main():
     notes_candidate = normalizer.normalize(notes_candidate)
 
     print("✓ Normalization Complete")
-
-    # -----------------------------------
-    # Merge
-    # -----------------------------------
 
     merger = Merger("config/source_priority.json")
 
@@ -71,9 +55,6 @@ def main():
     pprint(merged_candidate)
     print("\n==================================================\n")
 
-    # -----------------------------------
-    # Confidence
-    # -----------------------------------
 
     confidence = Confidence()
 
@@ -86,10 +67,6 @@ def main():
     print("\n============== AFTER CONFIDENCE ==================\n")
     pprint(merged_candidate)
     print("\n==================================================\n")
-
-    # -----------------------------------
-    # Validation
-    # -----------------------------------
 
     validator = Validator()
 
@@ -107,9 +84,6 @@ def main():
     else:
         print("✓ Validation Successful")
 
-    # -----------------------------------
-    # Projection
-    # -----------------------------------
 
     projection = Projection(
         "config/projection.json"
@@ -125,9 +99,6 @@ def main():
     pprint(final_output)
     print("\n==================================================\n")
 
-    # -----------------------------------
-    # Save Output
-    # -----------------------------------
 
     save_json(
         final_output,

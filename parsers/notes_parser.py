@@ -1,10 +1,3 @@
-"""
-Notes Parser
-
-Reads recruiter notes and converts them into the
-project's canonical candidate schema.
-"""
-
 from parsers.base_parser import BaseParser
 from utils.constants import SOURCE_NOTES
 from utils.helpers import create_candidate, clean_text

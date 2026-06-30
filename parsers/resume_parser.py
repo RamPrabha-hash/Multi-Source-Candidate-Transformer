@@ -28,25 +28,16 @@ class ResumeParser(BaseParser):
         text = self.extract_text()
         candidate = create_candidate()
 
-        # --------------------------------------------------
-        # NAME
-        # --------------------------------------------------
         lines = [line.strip() for line in text.split("\n") if line.strip()]
 
         if lines:
             candidate["full_name"] = lines[0].title()
 
-        # --------------------------------------------------
-        # EMAIL
-        # --------------------------------------------------
         emails = re.findall(r'[\w\.-]+@[\w\.-]+\.\w+', text)
 
         if emails:
             candidate["emails"] = list(set(emails))
 
-        # --------------------------------------------------
-        # PHONE
-        # --------------------------------------------------
         phones = re.findall(r'(\+?\d[\d\s-]{8,15}\d)', text)
 
         for phone in phones:
@@ -57,15 +48,9 @@ class ResumeParser(BaseParser):
 
         candidate["phones"] = list(set(candidate["phones"]))
 
-        # --------------------------------------------------
-        # HEADLINE
-        # --------------------------------------------------
         if len(lines) > 1:
             candidate["headline"] = lines[1]
 
-        # --------------------------------------------------
-        # SKILLS
-        # --------------------------------------------------
         skill_list = [
 
             "Python",
@@ -109,10 +94,6 @@ class ResumeParser(BaseParser):
 
         candidate["skills"] = sorted(list(set(candidate["skills"])))
 
-        # --------------------------------------------------
-        # EDUCATION
-        # --------------------------------------------------
-
         education = []
 
         degree_patterns = [
@@ -138,10 +119,6 @@ class ResumeParser(BaseParser):
                 break
 
         candidate["education"] = education
-
-        # --------------------------------------------------
-        # EXPERIENCE
-        # --------------------------------------------------
 
         candidate["experience"] = []
 
@@ -180,9 +157,6 @@ class ResumeParser(BaseParser):
 
                 })
 
-        # --------------------------------------------------
-        # PROJECTS
-        # --------------------------------------------------
 
         candidate["projects"] = []
 
@@ -201,10 +175,6 @@ class ResumeParser(BaseParser):
             if project.lower() in lower_text:
                 candidate["projects"].append(project)
 
-        # --------------------------------------------------
-        # CERTIFICATIONS
-        # --------------------------------------------------
-
         candidate["certifications"] = []
 
         certifications = [
@@ -219,10 +189,6 @@ class ResumeParser(BaseParser):
             if cert.lower() in lower_text:
                 candidate["certifications"].append(cert)
 
-        # --------------------------------------------------
-        # ACHIEVEMENTS
-        # --------------------------------------------------
-
         candidate["achievements"] = []
 
         achievements = [
@@ -236,10 +202,6 @@ class ResumeParser(BaseParser):
 
             if achievement.lower() in lower_text:
                 candidate["achievements"].append(achievement)
-
-        # --------------------------------------------------
-        # LINKS
-        # --------------------------------------------------
 
         candidate["links"] = {}
 
@@ -268,10 +230,6 @@ class ResumeParser(BaseParser):
 
         if github:
             candidate["links"]["github"] = github.group()
-
-        # --------------------------------------------------
-        # PROVENANCE
-        # --------------------------------------------------
 
         for key, value in candidate.items():
 

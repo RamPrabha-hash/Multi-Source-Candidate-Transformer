@@ -1,7 +1,3 @@
-"""
-Helper functions used across the project.
-"""
-
 import json
 from copy import deepcopy
 
@@ -27,11 +23,6 @@ def save_json(data: dict, file_path: str):
 
 
 def clean_text(text: str) -> str:
-    """
-    Remove extra spaces/tabs within each line, while
-    preserving line breaks (needed for parsers that rely
-    on document structure, e.g. name on its own line).
-    """
 
     if not text:
         return ""
@@ -71,8 +62,5 @@ def split_location(location: str) -> dict:
 
 
 def create_candidate() -> dict:
-    """
-    Return a fresh candidate schema.
-    """
 
     return deepcopy(CANONICAL_SCHEMA)

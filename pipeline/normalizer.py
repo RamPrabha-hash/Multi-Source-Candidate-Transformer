@@ -1,28 +1,14 @@
-"""
-Normalizer
-
-Cleans and standardizes candidate data.
-"""
-
 from utils.constants import SKILL_ALIASES
 
 
 class Normalizer:
-    """
-    Normalize candidate data.
-    """
 
     def normalize(self, candidate: dict) -> dict:
 
-        # -----------------------------
-        # Name
-        # -----------------------------
+
         if candidate["full_name"]:
             candidate["full_name"] = candidate["full_name"].strip().title()
 
-        # -----------------------------
-        # Emails
-        # -----------------------------
         candidate["emails"] = [
             email.strip().lower()
             for email in candidate["emails"]
@@ -31,9 +17,6 @@ class Normalizer:
         # Remove duplicate emails
         candidate["emails"] = list(set(candidate["emails"]))
 
-        # -----------------------------
-        # Skills
-        # -----------------------------
         normalized_skills = []
 
         for skill in candidate["skills"]:

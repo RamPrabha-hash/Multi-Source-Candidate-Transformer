@@ -1,10 +1,3 @@
-"""
-Base Parser
-
-Defines the interface that every parser
-must implement.
-"""
-
 from abc import ABC, abstractmethod
 
 

@@ -16,25 +16,13 @@ class Merger:
 
         candidate = {}
 
-        # -------------------------
-        # IDENTITY
-        # -------------------------
         candidate["candidate_id"] = ats.get("candidate_id")
         candidate["full_name"] = ats.get("name") or resume.get("full_name")
 
-        # -------------------------
-        # LOCATION (NO GUESSING)
-        # -------------------------
         candidate["location"] = ats.get("location") or None
 
-        # -------------------------
-        # HEADLINE
-        # -------------------------
         candidate["headline"] = ats.get("title") or None
 
-        # -------------------------
-        # EXPERIENCE (RESUME FIRST FIX)
-        # -------------------------
         candidate["experience"] = []
 
         # 1. PRIORITY: Resume Experience
@@ -50,9 +38,6 @@ class Merger:
                 "years": ats.get("experience")
             })
 
-        # -------------------------
-        # EMAILS
-        # -------------------------
         candidate["emails"] = []
 
         if ats.get("email"):
@@ -60,9 +45,6 @@ class Merger:
         elif resume.get("emails"):
             candidate["emails"] = resume["emails"]
 
-        # -------------------------
-        # PHONES
-        # -------------------------
         candidate["phones"] = []
 
         if ats.get("phone"):
@@ -70,24 +52,12 @@ class Merger:
         elif resume.get("phones"):
             candidate["phones"] = resume["phones"]
 
-        # -------------------------
-        # SKILLS
-        # -------------------------
         candidate["skills"] = resume.get("skills", [])
 
-        # -------------------------
-        # EDUCATION
-        # -------------------------
         candidate["education"] = resume.get("education", [])
 
-        # -------------------------
-        # LINKS
-        # -------------------------
         candidate["links"] = resume.get("links", {})
 
-        # -------------------------
-        # NOTES
-        # -------------------------
         candidate["notes"] = notes
 
         return candidate

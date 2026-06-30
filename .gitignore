@@ -1,28 +1,13 @@
-# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Virtual Environment
 venv/
 .venv/
 env/
-
-# VS Code
 .vscode/
-
-# PyCharm
 .idea/
-
-# Output files
 output/*.json
-
-# Logs
 *.log
-
-# OS files
 .DS_Store
 Thumbs.db
-
-# Environment Variables
 .env

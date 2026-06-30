@@ -7,9 +7,6 @@ class Projection:
 
         final = {}
 
-        # -------------------------
-        # CORE FIELDS (NO DROPPING)
-        # -------------------------
         final["candidate_id"] = candidate.get("candidate_id")
         final["full_name"] = candidate.get("full_name")
 
